@@ -13,7 +13,16 @@
     <img src="../../assets/img/big_loading.gif">
   </div>
 </div>
-<div *ngIf="!loading">
+
+<div class="row mt-4" *ngIf="!loading && teachers.length === 0">
+  <div class="col-10 offset-1 text-center">
+    <div class="alert alert-primary" role="alert">
+      No se encontraron profesores
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!loading && teachers.length > 0">
   <div class="row list-header">
     <div class="col-10 offset-1">
       <div class="row">
@@ -38,7 +47,7 @@
         </div>
         <div class="col-2 text-center">
           <i class="far fa-edit mr-2"></i>
-          <i class="far fa-trash-alt"></i>
+          <i class="far fa-trash-alt" (click)="delete(teacher.id_teacher)"></i>
         </div>
       </div>
     </div>
