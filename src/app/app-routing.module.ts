@@ -9,6 +9,8 @@ const routes: Routes = [
   { path: 'new-student', loadChildren: './student/student-form/student-form-routing.module#StudentFormRoutingModule' },
   { path: 'edit-student', loadChildren: './student/student-form/student-form-routing.module#StudentFormRoutingModule' },
   { path: 'test', loadChildren: './test/test-routing.module#TestRoutingModule' },
+  { path: 'new-test', loadChildren: './test/test-form/test-form-routing.module#TestFormRoutingModule' },
+  { path: 'edit-test', loadChildren: './test/test-form/test-form-routing.module#TestFormRoutingModule' },
   { path: 'teacher', loadChildren: './teacher/teacher-routing.module#TeacherRoutingModule' },
   { path: 'new-teacher', loadChildren: './teacher/teacher-form/teacher-form-routing.module#TeacherFormRoutingModule' },
   { path: 'edit-teacher', loadChildren: './teacher/teacher-form/teacher-form-routing.module#TeacherFormRoutingModule' },

@@ -5,7 +5,7 @@
 </div>
 <div class="row mb-3">
   <div class="col-10 offset-1 text-right">
-    <button type="button" class="btn btn-primary">Agregar prueba</button>
+    <button type="button" class="btn btn-primary" routerLink="/new-test">Agregar prueba</button>
   </div>
 </div>
 <div class="row mt-4" *ngIf="loading">
@@ -47,7 +47,7 @@
           {{test.id_course}}
         </div>
         <div class="col-2 text-center">
-          <i class="far fa-edit mr-2"></i>
+          <i class="far fa-edit mr-2" routerLink="/edit-test/{{test.id_test}}"></i>
           <i class="far fa-trash-alt" (click)="delete(test.id_test)"></i>
         </div>
       </div>
