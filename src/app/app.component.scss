@@ -1,0 +1,9 @@
+@import "../scss/variables.scss";
+
+.navbar {
+  background-color: $navbar-backgroud !important;
+}
+
+.navbar-light .navbar-brand {
+  color: #fff !important;
+}
