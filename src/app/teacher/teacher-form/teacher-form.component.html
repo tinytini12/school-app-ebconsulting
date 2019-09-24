@@ -2,7 +2,7 @@
   <div class="col-10 offset-1 mb-3 px-0">
     <button type="button" class="btn btn-link" (click)="goBack()">
       < Atrás</button> </div> <div class="col-10 offset-1 mb-3">
-        <h4>{{(id === undefined) ? 'Registro' : 'Edición'}} de estudiante</h4>
+        <h4>{{(id === undefined) ? 'Registro' : 'Edición'}} de profesor</h4>
   </div>
   <div class="col-10 offset-1 custom-form p-4">
     <form class="mt-2" [formGroup]="form" (ngSubmit)="save(form.value)">
