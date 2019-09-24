@@ -1,0 +1,29 @@
+<div class="row mt-3">
+  <div class="col-10 offset-1 mb-3 px-0">
+    <button type="button" class="btn btn-link" (click)="goBack()">
+      < Atrás</button> </div> <div class="col-10 offset-1 mb-3">
+        <h4>{{(id === undefined) ? 'Registro' : 'Edición'}} de curso</h4>
+  </div>
+  <div class="col-10 offset-1 custom-form p-4">
+    <form class="mt-2" [formGroup]="form" (ngSubmit)="save(form.value)">
+      <div class="row">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Nombre" formControlName="name">
+          <div class="inputError" *ngIf="form.get('name').touched && !form.get('name').valid">
+            Nombre inválido</div>
+        </div>
+        <div class="col">
+          <select class="form-control" formControlName="teacher">
+            <option *ngFor="let teacher of teachers" value="{{teacher.id_teacher}}">
+              {{teacher.name + ' ' + teacher.lastname}}</option>
+          </select>
+        </div>
+        <div class="col-3">
+          <button type="submit" class="btn btn-info btn-block"
+            [disabled]="buttonLoading">{{(id === undefined) ? 'Registrar' : 'Guardar Cambios'}} <i
+              class="fas fa-spinner fa-spin ml-2" *ngIf="buttonLoading"></i></button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
