@@ -48,6 +48,12 @@ export class TeacherComponent implements OnInit {
           });
           this.loading = true;
           this.loadTeachers();
+        }, e => {
+          if (e.error.message === 'Professor has courses') {
+            Swal.fire('Error', 'Profesor no se puede eliminar, tiene cursos asociados', 'error');
+          } else {
+            Swal.fire('Error', 'Se produjo un error al eliminar', 'error');
+          }
         });
       }
     });

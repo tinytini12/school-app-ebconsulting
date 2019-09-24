@@ -48,6 +48,12 @@ export class CourseComponent implements OnInit {
           });
           this.loading = true;
           this.loadCourses();
+        }, e => {
+          if (e.error.message === 'Course has students or tests') {
+            Swal.fire('Error', 'No se puede eliminar este curso, tiene estudiantes o pruebas asociadas', 'error');
+          } else {
+            Swal.fire('Error', 'Se produjo un error al eliminar', 'error');
+          }
         });
       }
     });
