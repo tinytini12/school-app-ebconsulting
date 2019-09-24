@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   { path: '', loadChildren: './student/student-routing.module#StudentRoutingModule' },
@@ -14,8 +14,8 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes),
-    CommonModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   exports: [
     RouterModule

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StudentService } from '../shared/services/student/student.service';
 
 @Component({
   selector: 'app-student',
@@ -6,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./student.component.scss']
 })
 export class StudentComponent implements OnInit {
+  students: any = [];
+  loading = true;
 
-  constructor() { }
+  constructor(private studentService: StudentService) {
+    this.loadStudents();
+  }
 
   ngOnInit() {
+  }
+
+  loadStudents() {
+    this.studentService.get().then((students: any) => {
+      this.students = students;
+      this.loading = false;
+    });
   }
 
 }
