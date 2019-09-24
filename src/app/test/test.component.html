@@ -28,8 +28,9 @@
     <div class="col-10 offset-1">
       <div class="row">
         <div class="col-2">ID</div>
-        <div class="col-4">Nombre</div>
-        <div class="col-4">ID curso</div>
+        <div class="col-3">Nombre</div>
+        <div class="col-2">ID curso</div>
+        <div class="col-3">Curso</div>
         <div class="col-2 text-center">Acciones</div>
       </div>
     </div>
@@ -40,11 +41,14 @@
         <div class="col-2">
           {{test.id_test}}
         </div>
-        <div class="col-4">
+        <div class="col-3">
           {{test.name}}
         </div>
-        <div class="col-4">
+        <div class="col-2">
           {{test.id_course}}
+        </div>
+        <div class="col-3">
+          {{test.course}}
         </div>
         <div class="col-2 text-center">
           <i class="far fa-edit mr-2" routerLink="/edit-test/{{test.id_test}}"></i>
