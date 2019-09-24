@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StudentService } from '../shared/services/student/student.service';
+import { AllService } from '../shared/services/all.service';
 
 @Component({
   selector: 'app-student',
@@ -10,7 +10,7 @@ export class StudentComponent implements OnInit {
   students: any = [];
   loading = true;
 
-  constructor(private studentService: StudentService) {
+  constructor(private allService: AllService) {
     this.loadStudents();
   }
 
@@ -18,9 +18,11 @@ export class StudentComponent implements OnInit {
   }
 
   loadStudents() {
-    this.studentService.get().then((students: any) => {
+    this.allService.get('student').then((students: any) => {
       this.students = students;
       this.loading = false;
+    }, e => {
+      console.log('Error al cargar estudiantes');
     });
   }
 
