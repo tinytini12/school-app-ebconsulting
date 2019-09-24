@@ -13,12 +13,16 @@ export class AllService {
     return this.http.get(API_URL + resource).toPromise();
   }
 
+  getById(resource: string, id: number): Promise<any> {
+    return this.http.get(API_URL + resource + '/' + id).toPromise();
+  }
+
   post(resource: string, body: any) {
-    return this.http.post(API_URL + resource, body);
+    return this.http.post(API_URL + resource, body).toPromise();
   }
 
   put(resource: string, body: any) {
-    return this.http.put(API_URL + resource, body);
+    return this.http.put(API_URL + resource, body).toPromise();
   }
 
   delete(resource: string, id: number) {
