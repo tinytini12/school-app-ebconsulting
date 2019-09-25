@@ -23,7 +23,7 @@ export class StudentComponent implements OnInit {
       this.students = students;
       this.loading = false;
     }, e => {
-      console.log('Error al cargar estudiantes');
+      Swal.fire('Error', 'Error al cargar estudiantes', 'error');
     });
   }
 

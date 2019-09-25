@@ -24,7 +24,7 @@ export class TestComponent implements OnInit {
       this.tests = teachers;
       this.loading = false;
     }, e => {
-      console.log('Error al cargar pruebas');
+      Swal.fire('Error', 'Error al cargar pruebas', 'error');
     });
   }
 

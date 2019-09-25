@@ -23,7 +23,7 @@ export class CourseComponent implements OnInit {
       this.courses = courses;
       this.loading = false;
     }, e => {
-      console.log('Error al cargar cursos');
+      Swal.fire('Error', 'Error al cargar cursos', 'error');
     });
   }
 
