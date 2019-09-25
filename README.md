@@ -12,4 +12,4 @@ Aplicación para prueba técnica de ebconsulting. Desarrollada en Angular 7.3.9
 #### Instrucciones de uso:
 1. Clonar o descargar el repositorio https://github.com/tinytini12/school-app-ebconsulting.git
 2. Dentro de la carpeta **school-app-ebconsulting** ejecutar el comando **npm install**
-3. Ejecutar el comando ng serve --open
+3. Ejecutar el comando **ng serve --open**
