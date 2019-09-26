@@ -49,8 +49,8 @@
           {{st.lastname}}
         </div>
         <div class="col-2 text-center">
-          <i class="far fa-edit mr-2" routerLink="/edit-student/{{st.id_student}}"></i>
-          <i class="far fa-trash-alt" (click)="delete(st.id_student)"></i>
+          <i class="far fa-edit mr-2" routerLink="/edit-student/{{st.id_student}}" ngbTooltip="Editar"></i>
+          <i class="far fa-trash-alt" (click)="delete(st.id_student)" ngbTooltip="Eliminar"></i>
         </div>
       </div>
     </div>

@@ -46,8 +46,8 @@
           {{teacher.lastname}}
         </div>
         <div class="col-2 text-center">
-          <i class="far fa-edit mr-2" routerLink="/edit-teacher/{{teacher.id_teacher}}"></i>
-          <i class="far fa-trash-alt" (click)="delete(teacher.id_teacher)"></i>
+          <i class="far fa-edit mr-2" routerLink="/edit-teacher/{{teacher.id_teacher}}" ngbTooltip="Editar"></i>
+          <i class="far fa-trash-alt" (click)="delete(teacher.id_teacher)" ngbTooltip="Eliminar"></i>
         </div>
       </div>
     </div>

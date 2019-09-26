@@ -50,8 +50,8 @@
           {{course.teacher}}
         </div>
         <div class="col-2 text-center">
-          <i class="far fa-edit mr-2" routerLink="/edit-course/{{course.id_course}}"></i>
-          <i class="far fa-trash-alt" (click)="delete(course.id_course)"></i>
+          <i class="far fa-edit mr-2" routerLink="/edit-course/{{course.id_course}}" ngbTooltip="Editar"></i>
+          <i class="far fa-trash-alt" (click)="delete(course.id_course)" ngbTooltip="Eliminar"></i>
         </div>
       </div>
     </div>
