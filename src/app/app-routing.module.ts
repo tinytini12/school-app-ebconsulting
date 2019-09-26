@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'test', loadChildren: './test/test-routing.module#TestRoutingModule' },
   { path: 'new-test', loadChildren: './test/test-form/test-form-routing.module#TestFormRoutingModule' },
   { path: 'edit-test', loadChildren: './test/test-form/test-form-routing.module#TestFormRoutingModule' },
+  { path: 'test-view', loadChildren: './test/test-view/test-view-routing.module#TestViewRoutingModule' },
   { path: 'teacher', loadChildren: './teacher/teacher-routing.module#TeacherRoutingModule' },
   { path: 'new-teacher', loadChildren: './teacher/teacher-form/teacher-form-routing.module#TeacherFormRoutingModule' },
   { path: 'edit-teacher', loadChildren: './teacher/teacher-form/teacher-form-routing.module#TeacherFormRoutingModule' },

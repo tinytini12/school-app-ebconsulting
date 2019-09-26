@@ -52,7 +52,8 @@
         </div>
         <div class="col-2 text-center">
           <i class="far fa-edit mr-2" routerLink="/edit-test/{{test.id_test}}"></i>
-          <i class="far fa-trash-alt" (click)="delete(test.id_test)"></i>
+          <i class="far fa-trash-alt mr-2" (click)="delete(test.id_test)"></i>
+          <i class="fas fa-clipboard-check" routerLink="/test-view/{{test.id_test}}"></i>
         </div>
       </div>
     </div>

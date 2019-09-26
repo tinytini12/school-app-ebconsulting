@@ -1,0 +1,51 @@
+<div class="row mt-3">
+  <div class="col-10 offset-1 mb-3 px-0">
+    <button type="button" class="btn btn-link" (click)="goBack()">
+      < Atrás</button> </div> <div class="col-10 offset-1 mb-3">
+        <h4>Resultados de prueba</h4>
+  </div>
+
+  <div class="col-10 offset-1 px-0 text-center" *ngIf="loading">
+    <img src="../../assets/img/big_loading.gif">
+  </div>
+
+  <div class="col-10 offset-1 px-0" *ngIf="!loading">
+    <div class="row list-header">
+      <div class="col">Nombre</div>
+      <div class="col">Apellido</div>
+      <div class="col-1 text-center">Calificación (Máx. 7)</div>
+    </div>
+    <form [formGroup]="scoresForm">
+      <div class="row test-list py-2" formArrayName="scoreArray" *ngFor="let student of students; let i=index">
+        <div class="col">{{student.name}}</div>
+        <div class="col">{{student.lastname}}</div>
+        <div class="col-1 text-center pb-3" *ngIf="student.score !== null && inputs[i] === false">
+          <div class="form-row">
+            <div class="col-10">
+              <strong>{{student.score}}</strong> / 7
+            </div>
+            <div class="col-2">
+              <button type="button" class="btn btn-primary btn-sm" (click)="showInput(i)"><i
+                  class="fas fa-edit"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="col-1 text-center pb-2" *ngIf="student.score === null || inputs[i] === true">
+          <div class="form-row">
+            <div class="col-10">
+              <input class="form-control form-control-sm" type="number" min="1" max="7"
+                [formControl]="scoreArray.controls[i]">
+              <div class="inputError" *ngIf="scoreArray.controls[i].touched && !scoreArray.controls[i].valid">
+                Valor inválido</div>
+            </div>
+            <div class="col-2">
+              <button type="button" class="btn btn-primary btn-sm"
+                (click)="updateScore(student.id_test, student.id_student, scoreArray.controls[i].value, i)"
+                [disabled]="!scoreArray.controls[i].valid"><i class="fas fa-check"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
